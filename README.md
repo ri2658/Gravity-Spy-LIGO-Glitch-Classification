@@ -1,9 +1,8 @@
 # Gravity Spy Glitch Classification and XAI
 
-<<<<<<< HEAD
-Are the neural networks that detect glitches in the Gravity Spy Project XAI certified? Do they "think" like physicists? Are they "cheating"?
+Are the neural networks that detect glitches in the Gravity Spy Project XAI certified? Do they think like physicists? Are they cheating?
 
-This repository explores those questions by training image classifiers on Gravity Spy glitch spectrograms and then inspecting what the models attend to with saliency and class activation maps. The goal is not just to get a good classification score, but to ask whether the learned features look physically meaningful.
+This repository explores those questions by training image classifiers on Gravity Spy glitch spectrograms and then inspecting what the models attend to with saliency and class activation maps. The goal is not only to get a good classification score, but to ask whether the learned features look physically meaningful.
 
 Two questions guide the project:
 
@@ -29,7 +28,7 @@ The project includes two model families and a small XAI toolkit:
 
 Gravity Spy is a citizen-science project built around identifying non-astrophysical artifacts in gravitational-wave data. The images in this repository are not ordinary photographs; they are time-frequency representations of glitches. That makes interpretability especially valuable.
 
-If a model focuses on the same transient shape, ridge, or localized artifact that a physicist would use to identify a glitch class, that is a good sign. If it instead relies on background texture, borders, or other irrelevant patterns, then the model may be “right for the wrong reason.” This repo is set up to make that distinction visible.
+If a model focuses on the same transient shape, ridge, or localized artifact that a physicist would use to identify a glitch class, that is a good sign. If it instead relies on background texture, borders, or other irrelevant patterns, then the model may be right for the wrong reason. This repo is set up to make that distinction visible.
 
 ## Models
 
@@ -51,6 +50,8 @@ Relevant files:
 ### Zevin-Coughlin Net
 
 The repository also includes a smaller custom CNN that can be trained end to end. It provides a useful contrast with the ResNet18 baseline and is a good sanity check for whether interpretability patterns are architecture-dependent.
+
+The architecture was adapted from the paper below, which is also cited in the References section.
 
 Relevant files:
 
@@ -100,7 +101,13 @@ The `saliency_outputs/` directory contains example figures produced by the salie
 
 ## Notes on Interpretation
 
-This project does not claim that the models are “XAI certified.” Instead, it uses saliency maps as an investigation tool. A convincing explanation should be consistent across methods, stable under small perturbations, and aligned with domain intuition. If a heatmap looks plausible, that is evidence worth discussing. If it looks noisy or inconsistent, that is also a result.
+This project does not claim that the models are XAI certified. Instead, it uses saliency maps as an investigation tool. A convincing explanation should be consistent across methods, stable under small perturbations, and aligned with domain intuition. If a heatmap looks plausible, that is evidence worth discussing. If it looks noisy or inconsistent, that is also a result.
+
+## References
+
+The Zevin-Coughlin network in this repository is based on:
+
+Zevin, M., Coughlin, S., Bahaadini, S., Besler, E., Rohani, N., Allen, S., Cabero, M., Crowston, K., Katsaggelos, A. K., Lee, T. K., Littenberg, T. B., Lundgren, A., Mahabal, A., Mittal, S., Mukherjee, S., Sachdev, S., Salafia, O., Siddiqi, M., & George, D. (2017). Gravity Spy: Integrating Advanced LIGO detector characterization, machine learning, and citizen science. Classical and Quantum Gravity, 34(6), 064003. https://doi.org/10.1088/1361-6382/aa5cea
 
 ## Repository Layout
 
@@ -118,17 +125,14 @@ The code assumes a Python environment with deep learning and plotting libraries 
 
 If you want to reproduce the results, the fastest path is usually:
 
-1. Open `data_preprocessing.ipynb` and confirm the dataset path.
+1. Open [data_preprocessing.ipynb](data_preprocessing.ipynb) and confirm the dataset path.
 2. Train the desired model with the corresponding script.
-3. Run `evaluation.ipynb` or `tmp_eval.py` to check the saved checkpoint.
-4. Run `save_saliency_examples.py` or `saliency.ipynb` to generate explanations.
+3. Run [evaluation.ipynb](evaluation.ipynb) or `tmp_eval.py` to check the saved checkpoint.
+4. Run `save_saliency_examples.py` or [saliency.ipynb](saliency.ipynb) to generate explanations.
 
 ## Preview
 
 The figures below show the basic idea behind the project: compare what the model predicts with where it appears to be looking.
-=======
-Submitted to Cosmology & Galaxy Astrophysics with Simulations and Machine Learning 2027.
->>>>>>> 447caa6ee253b567e582e51aca80d5d80a917cf8
 
 ![saliency1](saliency_outputs/saliency1.png)
 ![original_detection1](saliency_outputs/original_detection1.png)
