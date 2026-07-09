@@ -1,5 +1,6 @@
 # Gravity Spy Glitch Classification and XAI
 
+<<<<<<< HEAD
 Are the neural networks that detect glitches in the Gravity Spy Project XAI certified? Do they "think" like physicists? Are they "cheating"?
 
 This repository explores those questions by training image classifiers on Gravity Spy glitch spectrograms and then inspecting what the models attend to with saliency and class activation maps. The goal is not just to get a good classification score, but to ask whether the learned features look physically meaningful.
@@ -125,6 +126,9 @@ If you want to reproduce the results, the fastest path is usually:
 ## Preview
 
 The figures below show the basic idea behind the project: compare what the model predicts with where it appears to be looking.
+=======
+Submitted to Cosmology & Galaxy Astrophysics with Simulations and Machine Learning 2027.
+>>>>>>> 447caa6ee253b567e582e51aca80d5d80a917cf8
 
 ![saliency1](saliency_outputs/saliency1.png)
 ![original_detection1](saliency_outputs/original_detection1.png)
